@@ -1,0 +1,30 @@
+.pagination-buttons{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-buttons button {
+    margin: 10px 10px
+}
+
+
+.pagination{
+    display:  flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+   
+}
+
+.pagination p {
+    font-size: 1rem;
+}
+
+select {
+    width:  150px ;
+}
+
+button {
+    min-width: 80px;
+}
