@@ -23,6 +23,7 @@ function App() {
   useEffect(() => {
     fetchBeers(apiFilters, searchTerm, paginationSize, currentPage);
   }, [debouncedSearchTerm]);
+  // эти эффекты нельзя в один обьединить?
 
   // filters useEffect
   useEffect(() => {
@@ -39,10 +40,12 @@ function App() {
     const serachfieldTotal = apiFilters.join('') + searchName.join('') // приводим к строке
     const request = await fetch(
       `https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${paginationSize}${serachfieldTotal}`
+      // урлу к апи стоит в .env вынести
     );
     const response = await request.json();
     setBeers(response);
     console.log("request");
+    // не забывай логи подчищать. А еще стоит всегда запросы в try/catch оборачивать и ошибку отлавливать
     return request;
   }
 
