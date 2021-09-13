@@ -13,6 +13,7 @@ const Filter = function ({ params, inputStatus }) {
   useEffect(() => {
     if ( inputValue ) {
       const result = { name: params.name , value: inputValue, type: params.type };
+      // можно не делать переменную а сразу обьект забросить в функцию
       inputStatus(result);
     }
     else if(inputValue === ''){

@@ -35,6 +35,7 @@ const Pagination = ({
           onClick={clickBack}
           className="btn btn-success btn-sm"
           disabled={currentPage === 1 ? true : false}
+          // можно просто disabled={currentPage === 1}
         >
           Back
         </button>

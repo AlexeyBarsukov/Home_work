@@ -30,6 +30,7 @@ const Filters = function ({ getApiFilters, setCurrentPage }) {
       if (data.value === "") {
         const sameElement = prevState.find((item) => item.name === data.name);
         const index = prevState.indexOf(sameElement);
+        // можно обьединить в findIndex, чтоб 2 раза по масиву не бегать
         return [...prevState.splice(1, index)];
       }
 
@@ -55,6 +56,7 @@ const Filters = function ({ getApiFilters, setCurrentPage }) {
       }
     });
     setCurrentPage( prevState => 1)  
+    // нет смысла функцию бросать, можно просто бросить единицу
     getApiFilters(resultArray);
   };
 
